@@ -1,0 +1,557 @@
+/* ==========================================================================
+   1. MODERN DESIGN SYSTEM & GLOBAL RESETS
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top right, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.system-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. PREMIUM FLOATING NAVIGATION BAR
+   ========================================================================== */
+.navbar-grid-system {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 16px 5%;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.3);
+}
+
+.nav-logo-anchor {
+  margin: 0;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #3b82f6, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.2s;
+}
+
+.nav-logo-anchor:hover {
+  transform: scale(1.02);
+}
+
+.nav-categories-row {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cat-tab {
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cat-tab:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cat-tab.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.admin-gate-btn {
+  background-color: rgba(71, 85, 105, 0.5);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-gate-btn:hover {
+  background-color: #ef4444;
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* ==========================================================================
+   3. STOREFRONT LANDING & HEADER BILLBOARD
+   ========================================================================== */
+.storefront-showcase {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+.category-billboard-header {
+  background: white;
+  padding: 25px 35px;
+  border-radius: 16px;
+  border-left: 6px solid #3b82f6;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.12);
+}
+
+.category-billboard-header h2 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+}
+
+.highlight-tag {
+  color: #3b82f6;
+}
+
+/* ==========================================================================
+   4. MANDATORY HORIZONTAL IMAGE CARD ROW SYSTEM
+   ========================================================================== */
+.dynamic-photo-matrix {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 24px;
+  width: 100%;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.photo-card-node {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  
+  /* Forces 4 items side-by-side perfectly on desktop layouts */
+  flex: 1 1 calc(25% - 24px);
+  min-width: 230px;
+  max-width: 280px;
+  
+  height: 300px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.photo-card-node:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.15);
+}
+
+.photo-card-node img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.photo-card-node:hover img {
+  transform: scale(1.05);
+}
+
+.card-label-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent 10%, rgba(15, 23, 42, 0.95) 90%);
+  color: white;
+  padding: 25px 20px 20px 20px;
+}
+
+.card-label-overlay h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card-label-overlay p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   5. CTA ACTIONS PANELS
+   ========================================================================== */
+.call-to-action-panel {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.trigger-form-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s;
+}
+
+.trigger-form-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.5);
+}
+
+/* ==========================================================================
+   6. USER ADOPTION REGISTRATION FORM UTILITY
+   ========================================================================== */
+.form-workspace-panel {
+  padding: 60px 20px;
+}
+
+.bounded-form-card {
+  background: white;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 45px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.back-link-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.back-link-btn:hover {
+  color: #3b82f6;
+}
+
+.bounded-form-card h3 {
+  margin: 0 0 25px 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  background-color: #f8fafc;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.split-form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.split-form-row div {
+  flex: 1;
+}
+
+.final-commit-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 35px;
+  box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.4);
+  transition: all 0.2s;
+}
+
+.final-commit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px -4px rgba(59, 130, 246, 0.5);
+}
+
+/* ==========================================================================
+   7. SUCCESS RECEIPT OVERLAY WINDOW
+   ========================================================================== */
+.success-panel-workspace {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.success-notification-billboard {
+  background: white;
+  max-width: 580px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+}
+
+.success-checkmark-badge {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #059669;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+  font-weight: bold;
+}
+
+.success-notification-billboard h2 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.invoice-receipt-card {
+  background-color: #f8fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.invoice-receipt-card h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.invoice-receipt-card p {
+  margin: 10px 0;
+  color: #475569;
+}
+
+.price-tag {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.return-storefront-btn {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.return-storefront-btn:hover {
+  background-color: #1e293b;
+}
+
+/* ==========================================================================
+   8. ADMINISTRATIVE SECURE PORTAL CONTROLS
+   ========================================================================== */
+.admin-lock-card {
+  max-width: 420px;
+  margin-top: 60px;
+}
+
+.admin-login-trigger-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.admin-dashboard-container {
+  max-width: 1240px;
+  margin: 50px auto;
+  padding: 0 25px;
+}
+
+.admin-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 20px;
+}
+
+.admin-dashboard-header h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.admin-logout-btn {
+  background-color: #64748b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-logout-btn:hover {
+  background-color: #475569;
+}
+
+/* ==========================================================================
+   9. ADMIN RECORD RETRIEVAL TABLES Schema
+   ========================================================================== */
+.table-responsive-wrapper {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+  margin-top: 30px;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-data-grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.admin-data-grid th {
+  background-color: #f8fafc;
+  padding: 18px 20px;
+  border-bottom: 2px solid #e2e8f0;
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-data-grid td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.admin-data-grid tr:last-child td {
+  border-bottom: none;
+}
+
+.table-cat-badge {
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.table-price-badge {
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.table-delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.table-delete-btn:hover {
+  background-color: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+/* ==========================================================================
+   10. HARDWARE GRAPHIC RENDERING ANIMATIONS
+   ========================================================================== */
+.animate-render {
+  animation: widgetFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes widgetFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
